@@ -1,9 +1,0 @@
-version: 2.1
-jobs:
-  myjob:
-    docker:
-      - image: "circleci/node:9.6.1"
-    steps:
-      - myjob/sayhello:
-          to: "Lev"
-      

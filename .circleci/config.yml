@@ -1,9 +1,8 @@
-version: 2.1
+version: 2.0
 jobs:
-  myjob:
+  build:
     docker:
-      - image: "circleci/node:9.6.1"
+      - image: centos 
     steps:
-      - myjob/sayhello:
-          to: "Lev"
-      
+      - checkout
+      - run: echo "Hello World"

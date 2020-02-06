@@ -29,8 +29,6 @@ jobs:
     docker:
       - image: circleci/node:9.6.1
       - deploy2s3: # a sample job that would be defined above.
-          
-  
     steps:
       - checkout
       - run: echo "CircleCI test"

@@ -41,7 +41,7 @@ jobs:
               to: "s3://mybucket_uri"
               overwrite: true
  
- workflows:
-    version: 2
-    jobs:
-      - build
+# workflows:
+#    version: 2
+#    jobs:
+#      - build

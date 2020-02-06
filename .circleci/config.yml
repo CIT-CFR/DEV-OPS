@@ -34,10 +34,10 @@ jobs:
       - run: echo "CircleCI test"
       - sayhello:
           to: "Pantheon Deploy"
-      - aws-s3/sync:
-              from: .
-              to: "s3://mybucket_uri"
-              overwrite: true
+#      - aws-s3/sync:
+#              from: .
+#              to: "s3://mybucket_uri"
+#              overwrite: true
  
 # workflows:
 #    version: 2

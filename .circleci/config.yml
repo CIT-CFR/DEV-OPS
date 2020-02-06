@@ -24,6 +24,7 @@ commands:
           command: aws s3 sync << parameters.from >> << parameters.to >><<# parameters.overwrite >> --delete<</ parameters.overwrite >>"
 orbs:
 aws-s3: circleci/aws-s3@1.0.0.3
+
 jobs:
   build:
     docker:

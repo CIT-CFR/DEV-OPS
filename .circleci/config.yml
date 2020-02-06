@@ -1,8 +1,49 @@
-version: 2.0
+version: 2.1
+
+     
+commands:
+   sayhello:
+     description: "command for demonstration purposes"
+     parameters:
+      to:
+        type: string
+        default: "Hello World"
+     steps:
+       - run: echo << parameters.to >>
+   sync:
+    description: "A simple encapsulation of doing an s3 sync"
+    parameters:
+      from:
+        type: string
+      to:
+        type: string
+      overwrite:
+        default: false
+        type: boolean
+    steps:
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync << parameters.from >> << parameters.to >><<# parameters.overwrite >> --delete<</ parameters.overwrite >>"
+  orbs:
+  aws-s3: circleci/aws-s3@1.0.0.3
 jobs:
   build:
     docker:
-      - image: ubuntu 
+      - image: circleci/node:9.6.1
+      - deploy2s3: # a sample job that would be defined above.
+          
+  
     steps:
       - checkout
-      - run: echo "Hello World"
+      - run: echo "CircleCI test"
+      - sayhello:
+          to: "Pantheon Deploy"
+      - aws-s3/sync:
+              from: .
+              to: "s3://mybucket_uri"
+              overwrite: true
+ 
+ workflows:
+    version: 2
+    jobs:
+      - build

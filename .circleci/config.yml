@@ -1,7 +1,5 @@
 version: 2.1
 
-orbs:
-aws-s3: circleci/aws-s3@1.0.15
 commands:
    sayhello:
      description: "command for demonstration purposes"
@@ -41,7 +39,8 @@ jobs:
               from: .
               to: "s3://mybucket_uri"
               overwrite: true
- 
+ orbs:
+   aws-s3: circleci/aws-s3@1.0.15
 # workflows:
 #    version: 2
 #    jobs:

@@ -37,9 +37,9 @@ jobs:
       - sayhello:
           to: "Pantheon Deploy"
       - aws-s3/sync:
-              aws-access-key-id: AKIA5V45DW3MLCAWILUF
-              aws-region: us-west-2
-              aws-secret-access-key: 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
+#              aws-access-key-id: AKIA5V45DW3MLCAWILUF
+#              aws-region: us-west-2
+#              aws-secret-access-key: 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
               from: .
               to: "s3://hosthtml"
               overwrite: true

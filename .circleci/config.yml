@@ -38,7 +38,7 @@ jobs:
           to: "Pantheon Deploy"
       - aws-s3/sync:
               from: .
-              to: "s3://mybucket_uri"
+              to: "s3://hosthtml"
               overwrite: true
  
 # workflows:
